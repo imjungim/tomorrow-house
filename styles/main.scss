@@ -1,11 +1,13 @@
 @import './constants/colors'; //변수선언은 최상위로 선언
 @import './constants/typography';
+@import './constants/breakpoints';
 
 @import './base/fonts';
 @import './base/normalize';
 @import './base/reset';
 
 @import './mixins/text-style';
+@import './mixins/responsive';
 
 @import './layouts/grid';
 

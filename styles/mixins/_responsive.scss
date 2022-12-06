@@ -1,0 +1,22 @@
+@mixin responsive($screen) {
+  @if ($screen == 'T') {
+    @media screen and (min-width: $md-breakpoint) {
+      //style 선언
+      @content;
+    }
+  }
+
+  @if ($screen == 'D') {
+    @media screen and (min-width: $lg-breakpoint) {
+      @content;
+    }
+  }
+}
+
+.section {
+  @include responsive(T) {
+    //tablet 적용부분
+    font-size: 10px;
+    color: red;
+  }
+}
