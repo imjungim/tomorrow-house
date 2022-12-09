@@ -1,0 +1,75 @@
+%form-base {
+  @include text-style(16, $primary);
+  display: block;
+  width: 100%;
+  height: 40px;
+  padding: 0 16px;
+  background-color: $white;
+  border: 1px solid $border;
+  border-radius: 4px;
+  transition: background-color 200ms ease-in-out;
+  appearance: none; //기본 스타일 해제(화살표)
+
+
+  &::placeholder {
+    color: $tertiary;
+  } //모든속성이 적용되는것은 아님.
+
+  &:not(:disabled):hover {
+    background-color: $background;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+  }
+}
+
+.form-select,
+.form-input {
+  @extend %form-base;
+}
+
+// NOTE : Select
+.select-group {
+  position: relative;
+
+  &.is-active {
+    .form-select {
+      border-color: $blue;
+    }
+
+    .ic-caret {
+      color: $blue;
+    }
+  }
+
+  .form-select {
+    padding-right: 40px; //select option 값이 너무 길어졌을경우 버튼과 겹치는 현상을 방지하기 위해 설정.
+    text-overflow: ellipsis; //text값이 너무 길어서 짤릴때 ...처리
+  }
+
+  .ic-caret {
+    @include pos-center-y;
+    right: 8px;
+    font-size: 24px;
+    color: $tertiary;
+    pointer-events: none; 
+  }
+}
+
+// NOTE : Input
+.input-group {
+  position: relative;
+
+  .form-input {
+    padding-left: 40px;
+  }
+
+  .ic-search {
+    @include pos-center-y;
+    left: 10px;
+    font-size: 20px;
+    color: $secondary;
+  }
+}
