@@ -11,22 +11,10 @@
     .button-group {
       @include flexbox(end);
 
-      .gnb-search-button {
+      .gnb-icon-button.is-search {
         margin-right: 4px;
       }
     }
-  }
-
-  &-icon-button {
-    @include flexbox;
-    width: 32px;
-    height: 32px;
-    font-size: 24px; //icon font에 상속
-    color: $secondary;
-  }
-
-  &-menu-button {
-    color: $blue;
   }
 
   .logo {
@@ -77,6 +65,7 @@
 
     .btn-primary {
       width: 88px;
+
       i {
         margin-left: 4px;
       }

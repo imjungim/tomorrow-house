@@ -1,0 +1,22 @@
+//gnb-icon 고유의 속성들
+
+.gnb-icon-button {
+  @include flexbox;
+  width: 32px;
+  height: 32px;
+  font-size: 24px; //icon font에 상속
+  color: $secondary;
+  transition: color 200ms ease-in-out;
+
+  &.is-menu {
+    color: $blue;
+
+    &:active {
+      color: $blue-dark;
+    }
+  }
+
+  &:active {
+    color: $primary;
+  }
+}
