@@ -55,7 +55,9 @@
                   <h2 class="visually-hidden">메뉴</h2>
                   <ul class="gnb-nav-list">
                     <li class="gnb-nav-item"><a href="/">커뮤니티</a></li>
-                    <li class="gnb-nav-item is-active"><a href="/">스토어</a></li>
+                    <li class="gnb-nav-item is-active">
+                      <a href="/">스토어</a>
+                    </li>
                     <li class="gnb-nav-item"><a href="/">인테리어시공</a></li>
                   </ul>
                 </nav>
@@ -79,6 +81,7 @@
                   />
                 </div>
 
+                <!-- NOTE: 로그인을 했을 경우 -->
                 <div class="button-group">
                   <button
                     class="gnb-icon-button is-search lg-hidden"
@@ -107,7 +110,7 @@
                   <a
                     href="/"
                     class="gnb-icon-button is-cart"
-                    aria-label="장바구니로 페이지로 이동, 5개의 상품이 담겨있습니다."
+                    aria-label="장바구니 페이지로 이동, 5개의 상품이 담겨있습니다."
                   >
                     <i class="ic-cart"></i>
                     <strong class="badge">5</strong>
@@ -126,6 +129,29 @@
                     </div>
                   </button>
                 </div>
+
+                <!-- NOTE: 로그인을 하지 않은 경우 -->
+                <!-- <div class="button-group">
+                  <button
+                    class="gnb-icon-button is-search lg-hidden"
+                    type="button"
+                    aria-label="검색창 열기 버튼"
+                  >
+                    <i class="ic-search"></i>
+                  </button>
+
+                  <a
+                    href="/"
+                    class="gnb-icon-button is-cart"
+                    aria-label="장바구니로 페이지로 이동, 5개의 상품이 담겨있습니다."
+                  >
+                    <i class="ic-cart"></i>
+                  </a>
+                  <div class="gnb-auth sm-hidden">
+                    <a href="/">로그인</a>
+                    <a href="/">회원가입</a>
+                  </div>
+                </div> -->
 
                 <button class="sm-hidden btn-primary btn-40" type="button">
                   글쓰기
