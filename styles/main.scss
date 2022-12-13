@@ -1,6 +1,7 @@
 @import './constants/colors'; //변수선언은 최상위로 선언
 @import './constants/typography';
 @import './constants/breakpoints';
+@import './constants/box-shadow';
 
 @import './base/fonts';
 @import './base/normalize';
@@ -23,6 +24,7 @@
 
 @import './components/gnb-nav';
 @import './components/gnb-icon-buttons';
+@import './components/my-menu';
 
 @import './layouts/grid';
 @import './layouts/gnb';
