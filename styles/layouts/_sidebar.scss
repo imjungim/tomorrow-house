@@ -1,0 +1,61 @@
+.sidebar {
+  width: 240px;
+  padding: 32px 20px;
+  background-color: $white;
+
+  &-header {
+    padding: 0 12px;
+
+    .logo {
+      @include flexbox(start);
+
+      a {
+        display: block;
+      }
+
+      img {
+        display: block;
+        width: auto;
+        height: 20px;
+      }
+    }
+  }
+
+  &-user,
+  &-auth {
+    @include flexbox(start);
+    height: 88px;
+    //패딩값을 하나씩 주지 않아도 nav와 log사이 가운데정렬
+  }
+
+  &-user {
+    a {
+      @include flexbox(start);
+      @include text-style(14, $primary);
+      width: 100%;
+      font-weight: 700;
+    }
+
+    .avatar-24 {
+      flex-grow: 0;
+      flex-shrink: 0; //한줄 영역이 넘쳐도 이미지가 망가지지 않도록
+      margin-right: 8px;
+    }
+
+    .username {
+      flex-grow: 1; //나머지 빈공간 영역을 다 차지하도록 username 최대폭 정
+      overflow: hidden; //이미지,텍스트, 요소가 넘쳤을때 _가질 수 있는 최대크기 144px로 고정
+      text-overflow: ellipsis; //텍스트가 넘칠때 ...처리
+      white-space: nowrap; //truncate
+    }
+  }
+
+  &-auth {
+    @include flexbox(between);
+    padding: 24px 0;
+
+    a {
+      width: 84px;
+    }
+  }
+}
