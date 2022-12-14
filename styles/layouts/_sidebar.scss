@@ -1,14 +1,22 @@
 .sidebar {
+  $sidebar-width: 240px;
+
   position: fixed;
   top: 0;
   left: 0;
   z-index: $sidebar-level;
-  width: 240px;
+  width: $sidebar-width;
   height: 100vh;
   padding: 32px 20px;
   overflow-y: auto; //화면 크기에 넘치는 컨텐츠를 볼수있게 스크롤이 내려질 수 있도록
   background-color: $white;
+  transform: translate3d(-#{$sidebar-width}, 0, 0);
+  transition: transform 300ms ease-in-out;
   overscroll-behavior: contain; //overlay 부분 스크롤이 안내려가도록 설정
+
+  &.is-active {
+    transform: translate3d(0, 0, 0);
+  }
 
   &-header {
     padding: 0 12px;
