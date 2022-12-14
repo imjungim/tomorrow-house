@@ -1,7 +1,14 @@
 .sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $sidebar-level;
   width: 240px;
+  height: 100vh;
   padding: 32px 20px;
+  overflow-y: auto; //화면 크기에 넘치는 컨텐츠를 볼수있게 스크롤이 내려질 수 있도록
   background-color: $white;
+  overscroll-behavior: contain; //overlay 부분 스크롤이 안내려가도록 설정
 
   &-header {
     padding: 0 12px;
@@ -85,5 +92,9 @@
         }
       }
     }
+  }
+  //스크롤 없애기_스크롤바 꾸미기가 가능
+  &::-webkit-scrollbar {
+    display: none;
   }
 }
