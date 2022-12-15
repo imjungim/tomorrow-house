@@ -90,10 +90,35 @@
   }
   //1200px이상 적용
   @include responsive(D) {
-    &-right {
+    &-search {
+      position: relative;
+      width: 264px;
+      margin-right: 24px;
+
       .input-group {
-        width: 264px;
+        width: 100%;
         margin-right: 24px;
+      }
+
+      .search-history {
+        position: absolute;
+        top: calc(100% + 8px); //부모(gnb-search) 기준 높이 100% , calc()
+        left: 0;
+        display: none;
+        width: 100%; //부모인 gnb-search 기준으로 264px적용
+        padding: 16px 8px 8px;
+        background-color: $white;
+        border: 1px solid $border;
+        border-radius: 4px;
+        box-shadow: $dropdown-shadow;
+
+        &.is-active {
+          display: block;
+        }
+
+        &-header {
+          padding: 0 8px;
+        }
       }
     }
   }
