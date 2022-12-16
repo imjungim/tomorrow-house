@@ -1,0 +1,39 @@
+.lnb {
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &-list {
+    @include inline-flexbox(start);
+    white-space: nowrap;
+    //width: max-content;
+    //width : 550px적용보다는 유연하게 동작하도록 max-content 적용
+    position: relative;
+    left: -8px;
+  }
+
+  &-item {
+    //flex-shrink: 0; //flex박스에 위해 공간이 좁아져도 본래 크기를 줄이지 말기
+
+    &.is-active {
+      a {
+        color: $blue;
+        border-bottom: 2px solid $blue;
+      }
+    }
+
+    a {
+      @include inline-flexbox; //inlineblock의 성격을 가짐_자신이 가진 content의 사이즈만큼을 width로 갖는다.
+      @include text-style(13px, $dark);
+      height: 40px;
+      padding: 0 8px;
+      font-weight: 700;
+    }
+
+    .ic-new {
+      color: $red;
+    }
+  }
+}
