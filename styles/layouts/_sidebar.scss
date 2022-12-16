@@ -1,6 +1,7 @@
 .sidebar {
   $sidebar-width: 240px;
 
+  @include no-scrollbar; //스크롤 없애기_스크롤바 꾸미기가 가능
   position: fixed;
   top: 0;
   left: 0;
@@ -100,9 +101,5 @@
         }
       }
     }
-  }
-  //스크롤 없애기_스크롤바 꾸미기가 가능
-  &::-webkit-scrollbar {
-    display: none;
   }
 }
