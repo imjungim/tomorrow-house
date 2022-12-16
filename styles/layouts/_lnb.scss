@@ -1,11 +1,11 @@
 .lnb {
-  $lnb-height-sm: 40px;
-  $lnb-height-md: 50px;
+
   $lnb-link-padding: 8px;
   $grid-margin: $sm-margin + $gutter / 2;
   @include no-scrollbar;
   overflow-x: auto;
   //gird에 영향을 받지 않는 곳에 border적용
+  background-color: $white;
 
   &-list {
     @include inline-flexbox(start);
