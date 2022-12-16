@@ -1,5 +1,9 @@
 .lnb {
+  $lnb-link-padding: 8px;
+  $grid-margin: $sm-margin + $gutter / 2;
+
   overflow-x: auto;
+  //gird에 영향을 받지 않는 곳에 border적용
 
   &::-webkit-scrollbar {
     display: none;
@@ -7,11 +11,13 @@
 
   &-list {
     @include inline-flexbox(start);
-    white-space: nowrap;
     //width: max-content;
     //width : 550px적용보다는 유연하게 동작하도록 max-content 적용
-    position: relative;
-    left: -8px;
+    height: 40px;
+    padding: 0 #{$grid-margin - $lnb-link-padding};
+    margin-left: -#{$grid-margin};
+    white-space: nowrap;
+    border-bottom: 1px solid $border;
   }
 
   &-item {
@@ -20,7 +26,7 @@
     &.is-active {
       a {
         color: $blue;
-        border-bottom: 2px solid $blue;
+        border-bottom-color: $blue;
       }
     }
 
@@ -28,12 +34,10 @@
       @include inline-flexbox; //inlineblock의 성격을 가짐_자신이 가진 content의 사이즈만큼을 width로 갖는다.
       @include text-style(13px, $dark);
       height: 40px;
-      padding: 0 8px;
+      padding: 0 $lnb-link-padding;
       font-weight: 700;
+      border-bottom: 2px solid transparent;
     }
 
-    .ic-new {
-      color: $red;
-    }
   }
 }
