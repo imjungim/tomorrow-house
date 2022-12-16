@@ -1,0 +1,70 @@
+.global-footer {
+  padding-top: 32px;
+  padding-bottom: 40px;
+  background-color: $background;
+  &-title {
+    @include text-style(13, $dark);
+    font-weight: 700;
+
+    .ic-chevron {
+      display: inline-block; // inline요소에 transform적용 불가!
+      font-size: 12px;
+      transform: rotate(-90deg);
+    }
+  }
+
+  &-contact {
+    @include text-style(24, $dark);
+    font-weight: 700;
+  }
+
+  &-time {
+    @include text-style(12, $primary);
+    margin-bottom: 24px;
+  }
+
+  &-detail-list {
+    font-size: 10px;
+    line-height: 16px;
+    letter-spacing: -0.01em;
+    color: $secondary;
+  }
+
+  &-detail-item {
+    @include flexbox(start);
+
+    address {
+      display: inline;
+    }
+
+    dt::after {
+      margin: 0 2px;
+      content: ':';
+    }
+  }
+
+  @include responsive(D) {
+    &-title {
+      @include text-style(14);
+    }
+
+    &-contact:hover {
+      opacity: 0.5;
+    }
+
+    &-detail-list {
+      @include flexbox(start);
+    }
+
+    &-detail-item {
+      a:hover {
+        text-decoration: underline;
+      }
+      //not 선택자 : -detail-item중에 last-child가 아닌 모든 뒤에 있는 가상요소
+      &-detail-item:not(:last-child)::after {
+        margin: 0 8px;
+        content: '|';
+      }
+    }
+  }
+}
