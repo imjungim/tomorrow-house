@@ -1,4 +1,6 @@
 .lnb {
+  $lnb-height-sm: 40px;
+  $lnb-height-md: 50px;
   $lnb-link-padding: 8px;
   $grid-margin: $sm-margin + $gutter / 2;
   @include no-scrollbar;
@@ -9,7 +11,7 @@
     @include inline-flexbox(start);
     //width: max-content;
     //width : 550px적용보다는 유연하게 동작하도록 max-content 적용
-    height: 40px;
+    height: $lnb-height-sm;
     padding: 0 #{$grid-margin - $lnb-link-padding};
     margin-left: -#{$grid-margin};
     white-space: nowrap;
@@ -29,10 +31,34 @@
     a {
       @include inline-flexbox; //inlineblock의 성격을 가짐_자신이 가진 content의 사이즈만큼을 width로 갖는다.
       @include text-style(13px, $dark);
-      height: 40px;
+      height: $lnb-height-sm;
       padding: 0 $lnb-link-padding;
       font-weight: 700;
       border-bottom: 2px solid transparent;
+
+      &:hover {
+        color: $blue;
+      }
+    }
+  }
+
+  @include responsive(T) {
+    height: $lnb-height-md;
+    overflow-x: visible;
+    border-bottom: 1px solid $border;
+
+    &-list {
+      height: auto;
+      padding: 0;
+      margin-left: 0;
+      border-bottom: 0;
+    }
+
+    &-item {
+      a {
+        @include text-style(14);
+        height: $lnb-height-md;
+      }
     }
   }
 }
