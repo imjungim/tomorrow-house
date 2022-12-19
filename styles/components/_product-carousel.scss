@@ -89,4 +89,34 @@
       }
     }
   }
+
+  @include responsive(D) {
+    @include flexbox(end, start);
+    flex-direction: row-reverse; //정렬 순서를 뒤바꿔서 슬라이더가 앞에 위치하도록 설정.
+
+    &-slider {
+      width: 500px;
+      height: 500px;
+    }
+
+    &-thumbnail {
+      margin-right: 8px;
+    }
+
+    .thumbnail-list {
+      flex-direction: column;
+    }
+
+    .thumbnail-item {
+      margin-right: 0;
+      margin-bottom: 8px;
+
+      button,
+      img {
+        width: 75px;
+        height: 75px;
+      }
+    }
+  }
+
 }
