@@ -61,7 +61,7 @@
         text-decoration: underline;
       }
       //not 선택자 : -detail-item중에 last-child가 아닌 모든 뒤에 있는 가상요소
-      &-detail-item:not(:last-child)::after {
+      &:not(:last-child)::after {
         margin: 0 8px;
         content: '|';
       }
