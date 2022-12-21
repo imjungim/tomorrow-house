@@ -17,7 +17,7 @@
   .text-button,
   .icon-button {
     @include pos-center-y;
-    right: -15px; // 15px만큼 더 안쪽으로 위치한 것을 되돌려준다
+    right: -#{$grid-margin}; // 15px만큼 더 안쪽으로 위치한 것을 되돌려준다
 
     &:active {
       opacity: 0.4;
@@ -26,7 +26,7 @@
 
   .text-button {
     @include text-style(14, $blue);
-    padding: 15px;
+    padding: $grid-margin;
     font-weight: 700;
   }
 
@@ -34,8 +34,8 @@
     @include flexbox;
 
     //버튼 사이즈 키워주기(최소 44px이상)
-    width: 22px + (15px * 2);
-    height: 22px + (15px * 2);
+    width: 22px + ($grid-margin * 2);
+    height: 22px + ($grid-margin * 2);
     font-size: 22px;
     color: $secondary;
 
