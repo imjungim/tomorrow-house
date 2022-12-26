@@ -12,11 +12,9 @@
     }
   }
 }
-
-.section {
-  @include responsive(T) {
-    //tablet 적용부분
-    font-size: 10px;
-    color: red;
+// 테블릿 이전에서 까지만 적용
+@mixin mobile-only() {
+  @media screen and (max-width: $md-breakpoint - 1px) {
+    @content;
   }
 }
