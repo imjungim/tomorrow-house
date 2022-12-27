@@ -59,10 +59,8 @@
     }
 
     .username {
+      @include truncate;
       flex-grow: 1; //나머지 빈공간 영역을 다 차지하도록 username 최대폭 정
-      overflow: hidden; //이미지,텍스트, 요소가 넘쳤을때 _가질 수 있는 최대크기 144px로 고정
-      text-overflow: ellipsis; //텍스트가 넘칠때 ...처리
-      white-space: nowrap; //truncate
     }
   }
 
