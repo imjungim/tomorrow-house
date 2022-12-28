@@ -36,6 +36,10 @@
 
     .avatar-32 {
       margin-right: 8px;
+
+      &:active {
+        opacity: 0.4;
+      }
     }
 
     .username,
@@ -48,6 +52,22 @@
       flex-grow: 1; //공간이 남으면 쫙 늘어남(order가 반대편으로 밀려나감)
       padding-right: 8px;
       font-weight: 700;
+
+      &:active {
+        color: $blue;
+      }
+    }
+  }
+
+  @include responsive(D) {
+    &-detail {
+      .avatar-32:hover {
+        opacity: 0.4;
+      }
+
+      .username:hover {
+        opacity: 0.4;
+      }
     }
   }
 }
