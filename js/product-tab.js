@@ -75,6 +75,7 @@ function updateActiveTabOnscroll() {
   //스크롤 위치에 따라 activeTab 업데이트
   //1. 현재 유저가 얼마만큼 스크롤을 했는지? -> window.scrollY
   //2. 각 tabPanel y축 위치 -> productTabPanelPositionMap
+
   if (disableUpdating) {
     return
   }
@@ -120,6 +121,6 @@ function updateActiveTabOnscroll() {
 
 window.addEventListener('load', detectTabPanelPosition)
 //html페이지 요소가 완전히 load됐을때
-window.addEventListener('resize', detectTabPanelPosition)
+window.addEventListener('resize', _.throttle(detectTabPanelPosition, 1000))
 //창의 사이즈가 바뀔 때
-window.addEventListener('scroll', updateActiveTabOnscroll)
+window.addEventListener('scroll', _.throttle(updateActiveTabOnscroll, 300))
