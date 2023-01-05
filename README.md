@@ -1,4 +1,7 @@
 # 🏠내일의 집
+![image](https://user-images.githubusercontent.com/97380925/210776138-baa840ad-324b-478f-8860-4e7e78f4611d.png)
+![image](https://user-images.githubusercontent.com/97380925/210776258-c40f3bee-8f3d-4b02-b878-ecfcc751ee07.png)
+
 
 ### 1. GNB
 
